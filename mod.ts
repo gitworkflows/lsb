@@ -1,4 +1,4 @@
-import { LSB } from "./module/lsb.ts";
+import { LSB } from "./modules/lsb.ts";
 
 /**
  * LSB manager
