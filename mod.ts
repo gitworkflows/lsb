@@ -29,9 +29,7 @@ export async function main(value) {
             console.log(">> Error: file not found");
             return
         }
-    }
-
-    if(array[0] == "decode" && array[1] != undefined && array[2] != undefined) {
+    } else if(array[0] == "decode" && array[1] != undefined && array[2] != undefined) {
         // check file array[1] exist
         try {
             if(Deno.statSync(array[1]).isFile) {
@@ -45,9 +43,10 @@ export async function main(value) {
             console.log(">> Error: file not found");
             return
         }
+    } else {
+        console.log("Usage: lsb encode <input_file> <secret_file> <output_file>");
+        console.log("       lsb decode <input_file> <secret_file_output>")
+        console.log("       only works with .png picture")
     }
-}
 
-export async function help() {
-    console.log("Show help");
 }
